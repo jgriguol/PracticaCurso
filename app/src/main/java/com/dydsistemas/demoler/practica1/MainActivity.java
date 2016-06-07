@@ -1,5 +1,7 @@
 package com.dydsistemas.demoler.practica1;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,7 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     EditText txtUsuario, txtPass;
     TextView tvUsuario, tvPass;
@@ -29,6 +31,12 @@ public class MainActivity extends AppCompatActivity {
         txtPass = (EditText) findViewById(R.id.txtPass);
         btnLogin = (Button) findViewById(R.id.btnLogin);
 
+        btnLogin.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                submit(v);
+            }
+        });
+
         btnLogin.setText("Login");
 
 
@@ -39,13 +47,18 @@ public class MainActivity extends AppCompatActivity {
         String pass;
         user = txtUsuario.getText().toString();
         pass = txtPass.getText().toString();
+
+        Intent i = new Intent(this, UsuarioActivity.class);
         if(user.equals(usuario) && pass.equals(password)){
             //llamo activity
-            Toast toast1 = Toast.makeText(getApplicationContext(), "Usuario y Clave correctos...", Toast.LENGTH_SHORT);
-            toast1.show();
+            //Toast toast1 = Toast.makeText(getApplicationContext(), "Usuario y Clave correctos...", Toast.LENGTH_SHORT);
+            //toast1.show();
+
+            i.putExtra("nombre", user);
+            startActivity(i);
         }
         else{
-            Toast toast1 = Toast.makeText(getApplicationContext(), "Usuario y/o Clave erroneos...", Toast.LENGTH_SHORT);
+            Toast toast1 = Toast.makeText(getApplicationContext(), "Datos incorrectos...", Toast.LENGTH_SHORT);
             toast1.show();
             txtPass.setText("");
             txtUsuario.setText("");

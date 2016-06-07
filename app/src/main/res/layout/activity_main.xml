@@ -51,7 +51,6 @@
             android:layout_height="wrap_content"
             android:text="Entar"
             android:id="@+id/btnLogin"
-            android:textSize="30dp"
-            android:onClick="submit" />
+            android:textSize="30dp" />
     </LinearLayout>
 </RelativeLayout>
