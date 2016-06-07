@@ -17,7 +17,7 @@
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Usuario"
+            android:text="@string/user_name"
             android:id="@+id/tvUsuario"
             android:textIsSelectable="false"
             android:textSize="30dp"
@@ -33,7 +33,7 @@
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Clave"
+            android:text="@string/pass"
             android:id="@+id/tvPass"
             android:textSize="30dp"
             android:gravity="center" />
@@ -49,7 +49,7 @@
         <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Entar"
+            android:text="@string/login"
             android:id="@+id/btnLogin"
             android:textSize="30dp" />
     </LinearLayout>

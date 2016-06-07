@@ -37,7 +37,9 @@ public class MainActivity extends Activity {
             }
         });
 
-        btnLogin.setText("Login");
+        btnLogin.setText(R.string.login); //llamo del string.xml
+        txtUsuario.setText("");
+        txtPass.setText("");
 
 
     }
